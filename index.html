@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neko Burglars — Top 200 Voices</title>
+  <meta name="description" content="A ranked field guide to the 200 most active members of the Neko Burglars group chat: message stats, writing habits, signature words, and chat characters.">
+  <meta name="theme-color" content="#0b0d12">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow"><span class="pulse"></span> Neko Burglars · group-chat field guide</div>
+      <h1>Top <em>200</em><br>voices.</h1>
+      <p class="dek">Who talks most, how they type, and the small habits that make each person recognisable.</p>
+      <div class="hero-meta">
+        <div><strong id="meta-messages">73,203</strong><span>messages</span></div>
+        <div><strong id="meta-voices">200</strong><span>ranked voices</span></div>
+        <div><strong id="meta-lines">61,551</strong><span>conversational lines</span></div>
+        <div><strong id="meta-days">56</strong><span>days of chat</span></div>
+      </div>
+      <p class="hero-note" id="hero-note">All times UTC · display names from the export · descriptive, not diagnostic.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="podium-section" aria-labelledby="podium-title">
+      <div class="section-kicker">
+        <h2 id="podium-title">The podium</h2>
+        <span>Most messages in the export</span>
+      </div>
+      <div class="podium" id="podium"></div>
+    </section>
+
+    <section class="controls" aria-label="Search and sort the ranking">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.2-4.2"></path></svg>
+        <input id="search" type="search" placeholder="Search names, characters, words…" autocomplete="off" spellcheck="false" aria-label="Search the ranking">
+        <kbd>/</kbd>
+      </div>
+      <label class="sort-wrap">
+        <span>Sort</span>
+        <select id="sort" aria-label="Sort the ranking">
+          <option value="rank">Rank</option>
+          <option value="messages">Messages</option>
+          <option value="reactions">Reactions received</option>
+          <option value="avg_asc">Shortest messages</option>
+          <option value="avg_desc">Longest messages</option>
+          <option value="emoji">Emoji rate</option>
+          <option value="active">Active days</option>
+          <option value="oneliner">One-liner rate</option>
+          <option value="text">Conversational lines</option>
+        </select>
+      </label>
+      <button class="ghost-btn" id="random" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"></path><path d="M4 20 21 3"></path><path d="M21 16v5h-5"></path><path d="m15 15 6 6"></path><path d="M4 4l5 5"></path></svg>
+        Random voice
+      </button>
+    </section>
+
+    <div class="filter-row" id="filters" aria-label="Filter the ranking"></div>
+
+    <div class="results-line">
+      <span id="results-count">Showing 200 voices</span>
+      <span id="results-note">Ranked by messages</span>
+    </div>
+
+    <section class="leaderboard" aria-label="Top 200 ranking">
+      <div class="lb-head" aria-hidden="true">
+        <span>Rank</span>
+        <span>Member</span>
+        <span class="col-character">Chat character</span>
+        <span class="num col-msgs">Msgs</span>
+        <span class="num col-share">Share</span>
+        <span class="num col-avg">Avg w</span>
+        <span class="num col-emoji">Emoji</span>
+        <span class="num col-reactions">Reacts</span>
+        <span class="num col-days">Days</span>
+        <span class="col-arrow"></span>
+      </div>
+      <div id="rows"></div>
+      <div id="empty" class="empty-state" hidden>
+        <strong>No voices match that.</strong>
+        <span>Try a different search, sort, or filter.</span>
+      </div>
+    </section>
+
+    <section class="method">
+      <div>
+        <div class="section-kicker"><h2>How to read this</h2><span>Method, briefly</span></div>
+        <p>This is a writing-style snapshot of the <strong>top 200 members by total messages</strong> in the export. It describes observable typing habits — message length, casing, punctuation, emoji, laughter markers, slang, recurring words, media use, and reactions — not personality or mental health.</p>
+      </div>
+      <div class="method-grid">
+        <div><span>Source</span><strong>Instagram export</strong><p>Eight JSON shards, 26 Aug – 20 Oct 2026.</p></div>
+        <div><span>Sample</span><strong>73,203 messages</strong><p>61,551 conversational lines across the top 200.</p></div>
+        <div><span>Signature words</span><strong>Log-odds vs. chat</strong><p>Names, system text, slurs and sensitive identity terms filtered out.</p></div>
+        <div><span>Small samples</span><strong>Cameo cards</strong><p>Under 10 conversational lines is flagged, not over-interpreted.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>Neko Burglars · Top 200 Voices</span>
+      <span class="footer-links"><a href="top200.csv">CSV</a><a href="top200.json">JSON</a></span>
+      <span>Generated 21 Oct 2026 · all times UTC</span>
+    </div>
+  </footer>
+
+  <dialog id="profile" class="profile-dialog" aria-labelledby="profile-title">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close profile">×</button>
+      <div id="profile-content"></div>
+    </div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
