@@ -1,0 +1,13 @@
+# Private source data and working files. Do not publish these.
+chat_data/
+neko_burglars.db
+neko_burglars.db-*
+user_characteristics.csv
+report.md
+style_features_debug.json
+how_each_person_talks.md
+
+# Local clutter
+__pycache__/
+*.pyc
+.DS_Store

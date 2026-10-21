@@ -16,7 +16,7 @@ Neko Burglars Instagram group chat. Each member has:
 Double-click `index.html`, or serve the folder locally:
 
 ```bash
-python3 -m http.server 8000 --directory site
+python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>.
@@ -31,6 +31,7 @@ No build step or network connection is required. All data is in `data.js`.
 - `data.js` — 200 ranked profiles (generated)
 - `top200.json` — full data export
 - `top200.csv` — spreadsheet-friendly export
+- `MAINTENANCE.md` — data-refresh pipeline, testing checklist, and deploy notes
 
 ## Notes
 
@@ -46,3 +47,8 @@ No build step or network connection is required. All data is in `data.js`.
 - Signature terms are filtered for names, system text, slurs, and sensitive
   identity/nationality terms.
 - The export begins mid-conversation on 26 Aug 2026 and ends 20 Oct 2026.
+
+## Maintaining
+
+See [MAINTENANCE.md](MAINTENANCE.md) for the update pipeline, privacy rules,
+release checklist, and deploy notes.
